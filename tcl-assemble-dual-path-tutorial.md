@@ -1600,6 +1600,7 @@ described as scattered rather than coherent, and this is the scatter:
 - **`tclVM`** is a wiki-documented introspection tool (`compile`,
   `disasm`, `literals`, `instTable`) — a debugging aid for poking at
   compiled objects, not a tutorial or reference in its own right.
+- **`:/Calc`** the calc module discussed above https://github.com/rocketship88/colin-parser
 
 None of these ties `assemble` into the wider bytecode-compiler picture
 the way this document attempts to. That gap is this document's actual
