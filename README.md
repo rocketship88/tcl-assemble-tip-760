@@ -5,13 +5,26 @@ which proposes promoting `tcl::unsupported::assemble` to a fully supported comma
 
 ## Contents
 
-- **`tip-760.md`** — the TIP text itself is simply linked above.
-- **`assemble-dual-path-tutorial.md`** — a technical document explaining
+TIP 760 itself is linked above and is not copied here.
+
+* `tcl-assemble-dual-path-tutorial.md` — a technical document explaining
   how `assemble` works internally, how it fits into Tcl's bytecode
   compiler, and how to use it effectively — including the dual-path
   (direct vs. inlined) compilation model, the peephole optimizer's
-  interaction with assembled code, and worked examples from a real
-  DSL built on top of it.
+  interaction with assembled code, and worked examples from a real DSL
+  built on top of it.
+* `tal_opcode_reference.md` — a reference to the TAL instructions.
+
+## Authorship and accuracy
+
+These documents are drafts. They were written by Claude (Anthropic's AI
+assistant), working from the Tcl source and from experiments on a Tcl
+build, with many edits and corrections requested by the repository
+owner. The owner has not independently verified every statement, and
+there is information in both documents, the opcode reference included,
+that he could not honestly say he knows to be fully accurate. Please
+treat anything here as unconfirmed until it has been checked against
+the Tcl source. Corrections are welcome.
 
 ## Why this exists
 
