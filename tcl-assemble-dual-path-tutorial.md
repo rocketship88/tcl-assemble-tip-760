@@ -436,7 +436,8 @@ Tcl core, not something specific to `assemble`:
 
 - Push the command name.
 - Push each argument word.
-- Emit `invokeStk` (or an `invokeStkN` variant, depending on word count).
+- Emit `invokeStk` (the compiler picks `INST_INVOKE_STK1` or `INST_INVOKE_STK4`
+  depending on the word count; TAL exposes a single `invokeStk` mnemonic).
 
 `TclCompileScript` then simply moves on to the next command in the script.
 Nothing about one command's fallback interrupts or poisons compilation of
@@ -774,7 +775,7 @@ than in fragments.
  84      CONTINUE_TARGET(        bodyRange);
  85      if (!TclIsEmptyToken(nextTokenPtr)) {
  86          nextRange = MAKE_LOOP_RANGE();
- 87          envPtr->exceptAuxArrayPtr[nextRange].supportsContinue = 0;
+ 87          envPtr->exceptAuxArrayPtr[nextRange].supportsContinue = false;
  88          CATCH_RANGE(nextRange) {
  89              BODY(               nextTokenPtr, 3);
  90          }
@@ -1464,7 +1465,7 @@ length).
 CONTINUE_TARGET(bodyRange);
 if (!TclIsEmptyToken(nextTokenPtr)) {
     nextRange = MAKE_LOOP_RANGE();
-    envPtr->exceptAuxArrayPtr[nextRange].supportsContinue = 0;
+    envPtr->exceptAuxArrayPtr[nextRange].supportsContinue = false;
     CATCH_RANGE(nextRange) {
         BODY(nextTokenPtr, 3);
     }
